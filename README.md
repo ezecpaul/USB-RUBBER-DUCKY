@@ -1,2 +1,2 @@
 # USB-RUBBER-DUCKY
-This Project is created as part of an assessment for a computer security course COMP6841 @ UNSW
+This Project for a computer security COMP6841 @ UNSW showing the danger of arbitrarily picking up/pluging in any usb stick in one's machine. As well as connecting to unkonwn public wifi
